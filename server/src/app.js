@@ -1,11 +1,12 @@
 import express from 'express';
+import cores from 'cors';
 
 const app = express();
 
-app.use(express.static('static'));
+app.use(cores());
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World</h1>');
+  res.send('hello World');
 });
 
 export default app;
