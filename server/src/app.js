@@ -9,4 +9,8 @@ app.get('/', (req, res) => {
   res.send('hello World');
 });
 
+app.get('/api', (req, res) => {
+ res.send('api');
+});
+
 export default app;

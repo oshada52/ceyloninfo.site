@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     console.log('effect');
-    axios.get('http://localhost:8080/').then((response) => {
+    axios.get('http://ceyloninfo.site/api').then((response) => {
       console.log(response.data);
     });
   }, []);
