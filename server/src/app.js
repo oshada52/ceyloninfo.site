@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cores());
 app.use(morgan('dev'));
-app.use(helmet);
+app.use(helmet());
 
 app.get('/', (req, res) => {
   res.send('hello World');
