@@ -9,7 +9,7 @@ app.use(cores());
 app.use(morgan('dev'));
 app.use(helmet());
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('hello World');
 });
 
