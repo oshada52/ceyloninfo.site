@@ -1,5 +1,4 @@
-mapboxgl.accessToken =
-  'pk.eyJ1IjoiZHdvc2hhZGEiLCJhIjoiY2xrczJqZW1zMTJrYzNpcG40ejgwY3lueiJ9.qv0pGMc7ukwHgLAFH1V5uQ';
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 const bounds = [
   [75.312182, 3.983108], // southwestern corner of the bounds
