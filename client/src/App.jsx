@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     console.log('effect');
-    axios.get('http://ceyloninfo.site/api').then((response) => {
+    axios.get('http://ceyloninfo.site/api/locations').then((response) => {
       console.log(response.data);
     });
   }, []);
