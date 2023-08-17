@@ -213,7 +213,7 @@ const map = new mapboxgl.Map({
 });
 
 async function getLocations() {
-  const response = await fetch('http://localhost:8080/api/geojson');
+  const response = await fetch('https://ceyloninfo.site/api/geojson');
 
   return response.json();
 }
