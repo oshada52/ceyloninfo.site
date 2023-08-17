@@ -20,7 +20,7 @@ class geoObj {
   type = 'Feature';
 
   constructor(name, long, lat) {
-    this.geometry = { type: 'Points', coordinates: [long, lat] };
+    this.geometry = { type: 'Point', coordinates: [long, lat] };
     this.properties = { title: name };
   }
 }
