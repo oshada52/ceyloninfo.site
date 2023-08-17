@@ -12,7 +12,7 @@ class dataObj {
   constructor(id, name) {
     this.id = id;
     this.name = name;
-    this.icon = `https://ceyloninfo.site/static/icons/surf.png`;
+    this.icon = `https://img.icons8.com/color/40/elephant.png`;
   }
 }
 
