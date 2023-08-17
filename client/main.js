@@ -213,102 +213,84 @@ const map = new mapboxgl.Map({
 });
 
 async function getLocations() {
-  const response = await fetch('http://ceyloninfo.site/api/locations');
+  const response = await fetch('http://localhost:8080/api/geojson');
 
   return response.json();
 }
 
-// getLocations().then((locations) => {
-//   map.on('load', () => {
-//     // Add an image to use as a custom marker
-//     for (let i = 0; i < locations.length; i++) {
-//       // console.log([locations[i].longitude, locations[i].id]);
-//       map.loadImage(
-//         'https://img.icons8.com/stickers/40/airplane-landing.png',
-//         (error, image) => {
-//           if (error) throw error;
-//           map.addImage(`custom-marker${i}`, image);
-//           // Add a GeoJSON source with 2 points
-//           map.addSource(`points${i}`, {
-//             type: 'geojson',
-//             data: {
-//               type: 'FeatureCollection',
-//               features: [
-//                 {
-//                   // feature for Mapbox DC
-//                   type: 'Feature',
-//                   geometry: {
-//                     type: 'Point',
-//                     coordinates: [
-//                       locations[i].longitude,
-//                       locations[i].latitude,
-//                     ],
-//                   },
-//                   properties: {
-//                     title: locations[i].name,
-//                   },
-//                 },
-//               ],
-//             },
-//           });
-//           // Add a symbol layer
-//           map.addLayer({
-//             id: `points${i}`,
-//             type: 'symbol',
-//             source: `points${i}`,
-//             layout: {
-//               'icon-image': `custom-marker${i}`,
-//               // get the title name from the source's "title" property
-//               'text-field': ['get', 'title'],
-//               'text-font': ['Poppins Regular', 'Arial Unicode MS Bold'],
-//               'text-offset': [0, 1.25],
-//               'text-anchor': 'top',
-//             },
-//           });
-//         }
-//       );
-//       map.on('click', `points${i}`, () => {
-//         alert(`points${i}`);
-//       });
-//     }
-//   });
-// });
-
-for (let i = 0; i < locationsTypes.length; i++) {
+getLocations().then((locations) => {
   map.on('load', () => {
     // Add an image to use as a custom marker
-    map.loadImage(`${locationsTypes[i].icon}`, (error, image) => {
-      if (error) throw error;
-      map.addImage(`custom-marker${i}`, image);
-      // Add a GeoJSON source with 2 points
-      map.addSource(`points${i}`, {
-        type: 'geojson',
-        data: {
-          type: 'FeatureCollection',
-          features: locationsTypes[i].geojson,
-        },
+    for (let i = 0; i < locations.length; i++) {
+      // console.log([locations[i].longitude, locations[i].id]);
+      map.loadImage(`${locations[i].icon}`, (error, image) => {
+        if (error) throw error;
+        map.addImage(`custom-marker${i}`, image);
+        // Add a GeoJSON source with 2 points
+        map.addSource(`points${i}`, {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: locations[i].geojson,
+          },
+        });
+        // Add a symbol layer
+        map.addLayer({
+          id: `points${i}`,
+          type: 'symbol',
+          source: `points${i}`,
+          layout: {
+            'icon-image': `custom-marker${i}`,
+            // get the title name from the source's "title" property
+            'text-field': ['get', 'title'],
+            'text-font': ['Poppins Regular', 'Arial Unicode MS Bold'],
+            'text-offset': [0, 1.25],
+            'text-anchor': 'top',
+          },
+        });
       });
-
-      // Add a symbol layer
-      map.addLayer({
-        id: `points${i}`,
-        type: 'symbol',
-        source: `points${i}`,
-        layout: {
-          'icon-image': `custom-marker${i}`,
-          // get the title name from the source's "title" property
-          'text-field': ['get', 'title'],
-          'text-font': ['Overpass SemiBold', 'Arial Unicode MS Bold'],
-          'text-offset': [0, 1.7],
-          'text-size': 12,
-          'text-letter-spacing': 0.02,
-          'text-anchor': 'top',
-        },
+      map.on('click', `points${i}`, () => {
+        alert(`points${i}`);
       });
-    });
+    }
   });
+});
 
-  map.on('click', `points${i}`, () => {
-    alert(`${locationsTypes[i].name}`);
-  });
-}
+// for (let i = 0; i < locationsTypes.length; i++) {
+//   map.on('load', () => {
+//     // Add an image to use as a custom marker
+//     map.loadImage(`${locationsTypes[i].icon}`, (error, image) => {
+//       if (error) throw error;
+//       map.addImage(`custom-marker${i}`, image);
+//       // Add a GeoJSON source with 2 points
+//       map.addSource(`points${i}`, {
+//         type: 'geojson',
+//         data: {
+//           type: 'FeatureCollection',
+//           features: locationsTypes[i].geojson,
+//         },
+//       });
+
+//       // Add a symbol layer
+//       map.addLayer({
+//         id: `points${i}`,
+//         type: 'symbol',
+//         source: `points${i}`,
+//         layout: {
+//           'icon-image': `custom-marker${i}`,
+//           // get the title name from the source's "title" property
+//           'text-field': ['get', 'title'],
+//           'text-font': ['Overpass SemiBold', 'Arial Unicode MS Bold'],
+//           'text-offset': [0, 1.7],
+//           'text-size': 12,
+//           'text-letter-spacing': 0.02,
+//           'text-anchor': 'top',
+//         },
+//       });
+//     });
+//   });
+
+//   map.on('click', `points${i}`, () => {
+//     alert(`${locationsTypes[i].name}`);
+//   });
+// }

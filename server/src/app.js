@@ -8,6 +8,7 @@ import api from './api/index.js';
 
 const app = express();
 
+app.use('/static', express.static('public'));
 app.use(express.json());
 app.use(cores());
 app.use(morgan('dev'));
@@ -17,7 +18,7 @@ app.use('/api', api);
 app.use(middlewares.notFound);
 
 app.get('/api', (req, res) => {
- res.send('api');
+  res.send('api');
 });
 
 export default app;
