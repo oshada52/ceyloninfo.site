@@ -8,7 +8,7 @@ const bounds = [
 const map = new mapboxgl.Map({
   container: 'map', // container ID
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: 'mapbox://styles/dwoshada/clkuzu71j001r01pb1pkabp00/draft', // style URL
+  style: 'mapbox://styles/dwoshada/cllgq36y8016m01qp6gu69id9', // style URL
   center: [80.738662, 7.840042], // starting position [lng, lat]
   zoom: 7,
   maxBounds: bounds,
@@ -46,7 +46,7 @@ getLocations().then((locations) => {
             // get the title name from the source's "title" property
             'text-field': ['get', 'title'],
             'text-font': ['Overpass SemiBold', 'Arial Unicode MS Bold'],
-            'text-offset': [0, 1.5],
+            'text-offset': [0, 1.7],
             'text-size': 12,
             'text-letter-spacing': 0.02,
             'text-anchor': 'top',
