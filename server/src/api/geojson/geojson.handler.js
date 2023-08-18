@@ -3,23 +3,24 @@ import pool from '../../db.js';
 class dataObj {
   id;
   name;
+  icon;
   geojson = [];
 
   addGeoData(data) {
     this.geojson.push(data);
   }
 
-  constructor(id, name) {
+  constructor(id, name, icon) {
     this.id = id;
     this.name = name;
-    this.icon = `https://img.icons8.com/color/40/elephant.png`;
+    this.icon = icon;
   }
 }
 
 class geoObj {
   type = 'Feature';
 
-  constructor(name, long, lat) {
+  constructor(name, long, lat, icon) {
     this.geometry = { type: 'Point', coordinates: [long, lat] };
     this.properties = { title: name };
   }
@@ -51,10 +52,9 @@ const getGeojson = async (req, res) => {
     const types = await getTypes();
 
     for (let i = 0; i < types.length; i++) {
-      const id = types[i].id;
-      const obj = new dataObj(id, types[i].name);
+      const obj = new dataObj(types[i].id, types[i].name, types[i].icon_link);
       for (let y = 0; y < locations.length; y++) {
-        if (id === locations[y].type) {
+        if (types[i].id === locations[y].type) {
           const obj2 = new geoObj(
             locations[y].name,
             locations[y].longitude,
