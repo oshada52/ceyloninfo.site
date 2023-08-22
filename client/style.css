@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&family=Permanent+Marker&display=swap');
+
 *,
 *::before,
 *::after {
@@ -69,4 +71,51 @@ header {
   font-size: 1.5rem;
   font-family: 'Permanent Marker', cursive;
   color: #253c78;
+}
+
+.location-info {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: end;
+  justify-content: center;
+}
+
+.data {
+  width: 60vw;
+  height: 60vh;
+  background-color: #fff9b8;
+  color: #344055;
+  border-radius: 40px 40px 0 0;
+  box-shadow: rgba(55, 54, 36, 0.35) 12px 10px 4px;
+  font-family: 'Londrina Solid', cursive;
+  letter-spacing: 0.05rem;
+  padding: 2rem 4rem 0 4rem;
+}
+
+.data h2 {
+  font-size: 2rem;
+}
+
+.data p {
+  margin-top: 20px;
+}
+
+.hide-btn {
+  position: relative;
+  float: right;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 375px) {
+  .data {
+    width: 90vw;
+    height: 70vh;
+    overflow-y: scroll;
+    padding: 2rem 1rem 0 2rem;
+  }
 }

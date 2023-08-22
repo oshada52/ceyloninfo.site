@@ -9,12 +9,6 @@
       content="upgrade-insecure-requests"
     />
     <link href="./style.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
-      rel="stylesheet"
-    />
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
       rel="stylesheet"
@@ -28,6 +22,32 @@
         <span class="site-logo">CEYLON INFO</span>
       </header>
       <div id="map"></div>
+      <div class="location-info">
+        <div class="data">
+          <button
+            class="hide-btn"
+            onclick="document.querySelector('.location-info').style.display = 'none'"
+          >
+            <img
+              width="35"
+              height="35"
+              src="https://img.icons8.com/pulsar-color/48/delete-sign.png"
+              alt="delete-sign"
+            />
+          </button>
+          <h2>Sigiriya</h2>
+          <span>Matale, Central Province</span>
+          <p>
+            According to the ancient Sri Lankan chronicle the Cūḷavaṃsa, this
+            area was a large forest, then after storms and landslides it became
+            a hill and was selected by King Kashyapa (AD 477–495) for his new
+            capital. He built his palace on top of this rock and decorated its
+            sides with colourful frescoes. On a small plateau about halfway up
+            the side of this rock he built a gateway in the form of an enormous
+            lion.
+          </p>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

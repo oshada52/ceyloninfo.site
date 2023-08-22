@@ -54,7 +54,7 @@ getLocations().then((locations) => {
         });
       });
       map.on('click', `points${i}`, () => {
-        alert(`points${i}`);
+        document.querySelector('.location-info').style.display = 'flex';
       });
     }
   });
