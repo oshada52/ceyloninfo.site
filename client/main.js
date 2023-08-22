@@ -11,8 +11,14 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/dwoshada/cllgq36y8016m01qp6gu69id9', // style URL
   center: [80.738662, 7.840042], // starting position [lng, lat]
   zoom: 7,
-  maxBounds: bounds,
+  // maxBounds: bounds,
 });
+
+async function getData() {
+  const response = await fetch('https://ceyloninfo.site/api/locations');
+
+  return response.json();
+}
 
 async function getLocations() {
   const response = await fetch('https://ceyloninfo.site/api/geojson');
@@ -53,8 +59,25 @@ getLocations().then((locations) => {
           },
         });
       });
-      map.on('click', `points${i}`, () => {
-        document.querySelector('.location-info').style.display = 'flex';
+
+      const x = map.on('click', `points${i}`, (e) => {
+        let locs = e.features[0].properties.title;
+        getData().then((data) => {
+          for (let y = 0; y < data.length; y++) {
+            if (data[y].name == locs) {
+              map.flyTo({
+                center: [data[y].longitude, data[y].latitude],
+                zoom: 14,
+                essenstial: true,
+              });
+              const infoTitle = document.querySelector('.info-title');
+              infoTitle.innerHTML = data[y].name;
+              const div = document.querySelector('.location-info');
+              div.style.visibility = 'visible';
+              // document.querySelector('.location-info').style.display = 'flex';
+            }
+          }
+        });
       });
     }
   });
