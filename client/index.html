@@ -26,7 +26,7 @@
         <div class="data">
           <button
             class="hide-btn"
-            onclick="document.querySelector('.location-info').style.visibility = 'hidden';"
+            onclick="document.querySelector('.location-info').style.display = 'none';"
           >
             <img
               width="35"
@@ -36,16 +36,25 @@
             />
           </button>
           <h2 class="info-title"></h2>
-          <span>Matale, Central Province</span>
-          <p>
-            According to the ancient Sri Lankan chronicle the Cūḷavaṃsa, this
-            area was a large forest, then after storms and landslides it became
-            a hill and was selected by King Kashyapa (AD 477–495) for his new
-            capital. He built his palace on top of this rock and decorated its
-            sides with colourful frescoes. On a small plateau about halfway up
-            the side of this rock he built a gateway in the form of an enormous
-            lion.
-          </p>
+          <span class="info-city">Matale, Central Province</span>
+
+          <p class="info-des"></p>
+          <div class="links">
+            <a class="gmaps-link" href="" target="_blank">
+              <img
+                width="40"
+                height="40"
+                src="https://img.icons8.com/color/40/google-maps.png"
+                alt="google-maps"
+              />
+            </a>
+
+            <a class="tripadv-link" href="" target="_blank">
+              <img
+                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

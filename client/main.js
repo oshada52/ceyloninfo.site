@@ -72,8 +72,14 @@ getLocations().then((locations) => {
               });
               const infoTitle = document.querySelector('.info-title');
               infoTitle.innerHTML = data[y].name;
+              const infoCity = document.querySelector('.info-city');
+              infoCity.innerHTML = `${data[y].city}, ${data[y].province} Province`;
+              const infoDes = document.querySelector('.info-des');
+              infoDes.innerHTML = data[y].description;
+              const gmapsLink = document.querySelector('.gmaps-link');
+              gmapsLink.href = data[y].googlemaps;
               const div = document.querySelector('.location-info');
-              div.style.visibility = 'visible';
+              div.style.display = 'flex';
               // document.querySelector('.location-info').style.display = 'flex';
             }
           }
