@@ -14,6 +14,10 @@ const map = new mapboxgl.Map({
   maxBounds: bounds,
 });
 
+map.on('load', () => {
+  map.resize();
+});
+
 // async function getData() {
 //   const response = await fetch('https://ceyloninfo.site/api/locations');
 
