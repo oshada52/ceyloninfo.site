@@ -61,7 +61,7 @@ getLocations().then((locations) => {
         });
       });
 
-      const x = map.on('click', `points${i}`, (e) => {
+      map.on('click', `points${i}`, (e) => {
         let locs = e.features[0].properties.title;
         getData().then((data) => {
           for (let y = 0; y < data.length; y++) {
@@ -81,7 +81,6 @@ getLocations().then((locations) => {
               gmapsLink.href = data[y].googlemaps;
               const div = document.querySelector('.location-info');
               div.style.display = 'flex';
-              // document.querySelector('.location-info').style.display = 'flex';
             }
           }
         });
