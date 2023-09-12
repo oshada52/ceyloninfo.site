@@ -11,28 +11,51 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'G-2PLMVNV3FY');
+      gtag("config", "G-2PLMVNV3FY");
     </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favcon.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favcon.png" sizes="64x64" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Explore Sri Lankan travel destinations on Ceylon Info. Find maps, attractions, and local insights for your next adventure."
+      content="Explore Sri Lanka's top travel destinations on our interactive map. Find attractions, local insights, places to visit in Sri Lanka."
+    />
+    <meta
+      name="keywords"
+      content="Sri Lanka, travel destinations, map, attractions, local insights, places to visit, "
     />
 
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
+    <meta
+      property="og:title"
+      content="Ceylon Info - Sri Lankan Travel Destinations Map"
+    />
+    <meta
+      property="og:description"
+      content="Explore Sri Lanka's top travel destinations on our interactive map. Find attractions, local insights, and plan your next journey with ease."
+    />
+    <meta
+      property="og:image"
+      content="https://www.ceyloninfo.site/og-image.jpg"
+    />
+    <meta property="og:url" content="https://www.ceyloninfo.site" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link href="./style.css" rel="stylesheet" />
     <link
+      rel="preload"
       href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
-      rel="stylesheet"
+      as="style"
     />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script
+      src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"
+      defer
+    ></script>
     <title>Ceylon Info - Explore Sri Lankan Travel Destinations</title>
   </head>
   <body>
@@ -67,12 +90,6 @@
                 alt="google-maps"
               />
             </a>
-
-            <a class="tripadv-link" href="" target="_blank">
-              <img
-                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
-              />
-            </a>
           </div>
         </div>
       </div>
@@ -81,6 +98,9 @@
           >Developed by
           <a href="https://github.com/oshadawick">oshada wick</a></span
         >
+        <br />
+        <span>Last updated: Sep 12, 2023</span>
+        <br />
       </footer>
     </div>
     <script type="module" src="/main.js"></script>

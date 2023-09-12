@@ -73,7 +73,7 @@ header {
 
 footer {
   position: fixed;
-  margin-top: 92vh;
+  margin-top: 90vh;
   margin-left: 5px;
   z-index: 10;
   height: 3rem;
@@ -154,12 +154,7 @@ footer {
   margin-right: 20px;
 }
 
-.tripadv-link {
-  width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 @media screen and (max-width: 820px) {
   .data {
