@@ -11,7 +11,7 @@ const bounds = [
 const map = new mapboxgl.Map({
   container: 'map', // HTML element id where the map will be rendered
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: 'mapbox://styles/dwoshada/cllgq36y8016m01qp6gu69id9', // style URL
+  style: 'mapbox://styles/dwoshada/clmhy36ro006k01pd7mbvfhj5', // style URL
   center: [80.738662, 7.840042], // starting position [lng, lat]
   zoom: 3,
   maxBounds: bounds,
@@ -98,12 +98,16 @@ function addMarkerAndLayer(map, location, i) {
         'icon-image': `custom-marker${i}`,
         // get the title name from the source's "title" property
         'text-field': ['get', 'title'],
-        'text-font': ['Overpass SemiBold', 'Arial Unicode MS Bold'],
+        'text-font': ['Londrina Solid Regular', 'Arial Unicode MS Bold'],
         'text-offset': [0, 1.7],
-        'text-size': 12,
-        'text-letter-spacing': 0.02,
+        'text-size': 14,
+        'text-letter-spacing': 0.05,
         'text-anchor': 'top',
       },
+      Paint: {
+        "line-color": "#ffff00",
+        'text-color': "#E63946",
+      }
     });
   });
 
