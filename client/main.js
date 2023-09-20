@@ -65,6 +65,7 @@ const infoCity = document.querySelector(".info-city");
 const infoDes = document.querySelector(".info-des");
 const gmapsLink = document.querySelector(".gmaps-link");
 const div = document.querySelector(".location-info");
+const image = document.querySelector(".location-img");
 
 // Displays location details in the DOM
 function showLocationDetails(location) {
@@ -73,6 +74,7 @@ function showLocationDetails(location) {
   infoDes.innerHTML = location.description;
   gmapsLink.href = location.googlemaps;
   div.style.display = "flex";
+  image.src = location.image;
 }
 
 // Adds marker and layer to the map for a given location
