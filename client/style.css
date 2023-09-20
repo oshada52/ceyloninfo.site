@@ -48,6 +48,11 @@ h6 {
 
 #loading {
   background-color: #457B9D;
+  background-image: url('/Untitled.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -109,7 +114,7 @@ header {
 
 footer {
   position: fixed;
-  margin-top: 90vh;
+  margin-top: 85vh;
   margin-left: 5px;
   z-index: 10;
   height: 3rem;
